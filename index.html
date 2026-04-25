@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Body Vision Studio — GYROTONIC® Cape Town</title>
+<meta name="description" content="Body Vision Studio offers GYROTONIC® and GYROKINESIS® movement method classes in Higgovale, Cape Town. Private & semi-private sessions with certified instructor Kim Tucker."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream: #f7f3ee;
+  --warm-white: #faf8f5;
+  --rust: #b5451b;
+  --rust-light: #c9622e;
+  --rust-muted: #e8b49a;
+  --charcoal: #2a2420;
+  --mid: #6b5c54;
+  --light-rule: rgba(90,60,40,0.12);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--warm-white);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(250,248,245,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light-rule);
+  transition: box-shadow .3s;
+}
+nav.scrolled { box-shadow: 0 2px 24px rgba(42,36,32,0.08); }
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--rust); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--rust); }
+
+.nav-cta {
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em;
+  border: 1px solid var(--rust) !important;
+  color: var(--rust) !important;
+  padding: 0.5rem 1.2rem;
+  transition: background .2s, color .2s !important;
+}
+.nav-cta:hover { background: var(--rust) !important; color: #fff !important; }
+
+/* mobile nav toggle */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.burger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--charcoal);
+  transition: .3s;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--warm-white);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--charcoal);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--rust); }
+.mobile-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mid);
+  font-family: var(--serif);
+}
+
+/* ── HERO ────────────────────────────────────── */
+#home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 70px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 4rem 6rem 3rem;
+  background: var(--warm-white);
+}
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 0.4rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--rust);
+}
+.hero-sub {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--mid);
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+}
+.hero-body {
+  font-size: 0.88rem;
+  color: var(--mid);
+  max-width: 380px;
+  margin-bottom: 3rem;
+  line-height: 1.9;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--rust);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  transition: background .2s, transform .2s;
+}
+.btn-primary:hover { background: var(--rust-light); transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-block;
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  border: 1px solid var(--charcoal);
+  margin-left: 1rem;
+  transition: background .2s, color .2s;
+}
+.btn-ghost:hover { background: var(--charcoal); color: #fff; }
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-overlay {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  text-align: right;
+  color: rgba(255,255,255,0.92);
+}
+.hero-overlay p:first-child {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.hero-overlay p:last-child {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, transparent 40%, rgba(30,20,15,0.55));
+}
+
+@keyframes heroReveal {
+  from { transform: scale(1.06); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ── SECTIONS ────────────────────────────────── */
+section { scroll-margin-top: 70px; }
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+
+.section-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 2.5rem;
+}
+
+.rule {
+  width: 48px;
+  height: 1px;
+  background: var(--rust-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* ── ABOUT GYROTONIC ─────────────────────────── */
+#about { background: var(--cream); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.benefits-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.5rem;
+  margin-top: 2rem;
+}
+.benefits-list li {
+  font-size: 0.82rem;
+  color: var(--mid);
+  padding-left: 1rem;
+  border-left: 2px solid var(--rust-muted);
+  line-height: 1.5;
+}
+
+.about-quote {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--rust);
+  border-left: 3px solid var(--rust-muted);
+  padding-left: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+p.body-text {
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.95;
+  margin-bottom: 1.2rem;
+}
+
+/* ── PILATES / COMPARISON ────────────────────── */
+#pilates { background: var(--warm-white); }
+
+.comparison-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 3rem;
+}
+.comp-card {
+  background: var(--cream);
+  padding: 3rem 2.5rem;
+}
+.comp-card:first-child { background: var(--charcoal); color: #fff; }
+.comp-card h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+.comp-card:first-child h3 { color: var(--rust-muted); }
+.comp-card p { font-size: 0.85rem; line-height: 1.9; }
+.comp-card:first-child p { color: rgba(255,255,255,0.75); }
+.comp-card:last-child p { color: var(--mid); }
+
+/* ── PREGNANCY ───────────────────────────────── */
+#pregnancy { background: var(--cream); }
+
+.pregnancy-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  align-items: start;
+}
+.pregnancy-aside {
+  position: sticky;
+  top: 100px;
+}
+.pregnancy-aside .large-num {
+  font-family: var(--serif);
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--rust-muted);
+  opacity: 0.4;
+  font-weight: 300;
+  margin-bottom: -1rem;
+}
+.pregnancy-aside h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--charcoal);
+}
+.principle-block {
+  border-top: 1px solid var(--light-rule);
+  padding: 1.8rem 0;
+}
+.principle-block h4 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--rust);
+  margin-bottom: 0.6rem;
+}
+.principle-block p { font-size: 0.87rem; color: var(--mid); line-height: 1.9; }
+
+/* ── ABOUT KIM ───────────────────────────────── */
+#kim { background: var(--warm-white); }
+
+.kim-grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.kim-pullquote {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--light-rule);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.kim-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--cream);
+  padding: 3rem 2.5rem;
+}
+.stat-item { border-left: 3px solid var(--rust-muted); padding-left: 1.2rem; }
+.stat-item .stat-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.4rem;
+}
+.stat-item .stat-val {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--charcoal);
+}
+
+/* ── PRICING ─────────────────────────────────── */
+#pricing { background: var(--charcoal); }
+#pricing .section-title { color: #fff; }
+#pricing .section-label { color: var(--rust-muted); }
+#pricing .rule { background: var(--rust); }
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.price-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2.5rem 2rem;
+  transition: border-color .2s, transform .2s;
+}
+.price-card:hover {
+  border-color: var(--rust-muted);
+  transform: translateY(-4px);
+}
+.price-card.featured {
+  background: var(--rust);
+  border-color: var(--rust);
+}
+.price-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.price-card .price-desc {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.price-card.featured .price-desc { color: rgba(255,255,255,0.8); }
+.price-tag {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+.price-note {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+}
+.price-card.featured .price-note { color: rgba(255,255,255,0.7); }
+
+.price-features {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.price-features li {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  padding-left: 1rem;
+  position: relative;
+}
+.price-features li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--rust-muted);
+}
+.price-card.featured .price-features li { color: rgba(255,255,255,0.9); }
+.price-card.featured .price-features li::before { color: rgba(255,255,255,0.6); }
+
+.pricing-note {
+  margin-top: 3rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ── CONTACT ─────────────────────────────────── */
+#contact { background: var(--warm-white); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 2rem; }
+.contact-detail .label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.4rem;
+}
+.contact-detail .val {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--charcoal);
+}
+.contact-detail a {
+  color: var(--charcoal);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rust-muted);
+  transition: color .2s, border-color .2s;
+}
+.contact-detail a:hover { color: var(--rust); border-color: var(--rust); }
+
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--cream);
+  border: 1px solid var(--light-rule);
+  padding: 0.85rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  font-weight: 300;
+  outline: none;
+  transition: border-color .2s;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--rust-muted);
+}
+.form-group textarea { min-height: 120px; }
+
+.submit-btn {
+  background: var(--rust);
+  color: #fff;
+  border: none;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background .2s, transform .2s;
+}
+.submit-btn:hover { background: var(--rust-light); transform: translateY(-1px); }
+
+/* ── FOOTER ──────────────────────────────────── */
+footer {
+  background: var(--charcoal);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+}
+.footer-logo span { color: var(--rust-muted); }
+.footer-trademark {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.25);
+  max-width: 580px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.8;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.footer-links a {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--rust-muted); }
+.footer-copy {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── ANIMATION UTILITIES ─────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.22s; }
+.delay-3 { transition-delay: 0.34s; }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .burger { display: flex; }
+
+  #home { grid-template-columns: 1fr; min-height: auto; }
+  .hero-text { padding: 5rem 1.5rem 3rem; }
+  .hero-image { height: 55vw; min-height: 260px; }
+
+  .about-grid,
+  .pregnancy-grid,
+  .kim-grid,
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .pregnancy-aside { position: static; }
+  .pregnancy-aside .large-num { font-size: 5rem; }
+
+  .comparison-cards { grid-template-columns: 1fr; }
+  .pricing-cards { grid-template-columns: 1fr; }
+  .benefits-list { grid-template-columns: 1fr; }
+
+  .section-inner { padding: 4.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#home" class="nav-logo"><span>body</span> vision studio</a>
+  <ul class="nav-links">
+    <li><a href="#about">The Method</a></li>
+    <li><a href="#pilates">Pilates vs Gyrotonic</a></li>
+    <li><a href="#pregnancy">Pregnancy</a></li>
+    <li><a href="#kim">About Kim</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Session</a></li>
+  </ul>
+  <button class="burger" onclick="document.querySelector('.mobile-menu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu">
+  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">×</button>
+  <a href="#home" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Home</a>
+  <a href="#about" onclick="document.querySelector('.mobile-menu').classList.remove('open')">The Method</a>
+  <a href="#pilates" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Pilates vs Gyrotonic</a>
+  <a href="#pregnancy" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Pregnancy</a>
+  <a href="#kim" onclick="document.querySelector('.mobile-menu').classList.remove('open')">About Kim</a>
+  <a href="#pricing" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Pricing</a>
+  <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Book a Session</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Higgovale · Cape Town</p>
+    <h1 class="hero-title"><em>body</em><br>vision<br>studio</h1>
+    <p class="hero-sub">The Art of Exercising and Beyond®</p>
+    <p class="hero-body">Private and semi-private GYROTONIC® and GYROKINESIS® movement method sessions in a boutique studio environment. Tailored to dancers, athletes, post-surgery recovery, and anyone seeking a freer, stronger body.</p>
+    <div>
+      <a href="#contact" class="btn-primary">Book a Free Intro</a>
+      <a href="#about" class="btn-ghost">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img
+      src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&auto=format&fit=crop&q=80"
+      alt="GYROTONIC® movement practice"
+      loading="eager"
+    />
+    <div class="hero-gradient"></div>
+    <div class="hero-overlay">
+      <p>The GYROTONIC® Method</p>
+      <p>"The Art of Exercising and Beyond"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THE METHOD -->
+<section id="about">
+  <div class="section-inner">
+    <span class="section-label fade-up">The Gyrotonic® Method</span>
+    <h2 class="section-title fade-up delay-1">About the GYROTONIC<br>Expansion System®</h2>
+    <div class="rule fade-up delay-2"></div>
+
+    <div class="about-grid">
+      <div>
+        <p class="body-text fade-up">The <strong>GYROTONIC EXPANSION SYSTEM®</strong> is a unique system of movements designed to correct imbalance — excellent for anyone seeking healthy conditioning and core strength, or recovering from injury or surgery.</p>
+
+        <p class="body-text fade-up">Discovered by renowned Polish dancer <strong>Juliu Horvath</strong>, the system was born from years of intense study and self-exploration following injuries sustained in his dance career. The name itself offers insight into its essence: <em>gyro</em> — spiral or circle; <em>tonic</em> — to tone or invigorate.</p>
+
+        <p class="body-text fade-up">It delivers the same benefits found in yoga, dance, gymnastics, swimming, and tai chi — but through circular, spiraling, undulating and free-flowing exercises that work simultaneously on breathing, stretching, strengthening, and joint articulation.</p>
+
+        <blockquote class="about-quote fade-up">"Freedom of movement with its circular, spiraling, undulating and free-flowing exercises."</blockquote>
+
+        <p class="body-text fade-up">An innovative approach that promotes and maintains health and wellbeing by increasing coordination and endurance, enhancing aerobic and cardiovascular activity, and promoting neuromuscular rejuvenation. Even Tiger Woods and Gwyneth Paltrow have enjoyed its benefits.</p>
+      </div>
+
+      <div>
+        <span class="section-label fade-up">System Benefits</span>
+        <h3 class="fade-up" style="font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--charcoal);margin-bottom:1.5rem;">The body, in every dimension.</h3>
+        <ul class="benefits-list">
+          <li class="fade-up">Strengthen the core</li>
+          <li class="fade-up">Stretch &amp; strengthen musculature</li>
+          <li class="fade-up">Improve posture</li>
+          <li class="fade-up">Release joint tension</li>
+          <li class="fade-up">Increase flexibility &amp; motion</li>
+          <li class="fade-up">Breath-movement coordination</li>
+          <li class="fade-up">Articulate the spine</li>
+          <li class="fade-up">Relieve stress on joints</li>
+          <li class="fade-up">Improve circulation</li>
+          <li class="fade-up">Recondition the nervous system</li>
+          <li class="fade-up">Revitalise body energy</li>
+          <li class="fade-up">Stimulate meridians</li>
+          <li class="fade-up">Prevent &amp; rehabilitate injuries</li>
+          <li class="fade-up">Enhance balance &amp; stability</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILATES VS GYROTONIC -->
+<section id="pilates">
+  <div class="section-inner">
+    <span class="section-label fade-up">Understanding the Difference</span>
+    <h2 class="section-title fade-up delay-1">Pilates vs the<br>GYROTONIC® Method</h2>
+    <div class="rule fade-up delay-2"></div>
+
+    <div class="comparison-cards">
+      <div class="comp-card fade-up">
+        <h3>GYROTONIC® Method</h3>
+        <p>The GYROTONIC® system employs fluid, circular, and three-dimensional movements inspired by yoga, dance, gymnastics, swimming, and tai chi. Its specialised equipment supports and guides the body through arching, curling, spiraling, and wave-like motions that simultaneously stretch and strengthen — always with a rhythmic, breathing-led flow. The emphasis is on articulating every joint and decompressing the spine through continuous movement.</p>
+      </div>
+      <div class="comp-card fade-up delay-1">
+        <h3>Classical Pilates</h3>
+        <p>Pilates is a structured method built on controlled, linear movements that focus on core stabilisation, alignment, and postural correction. Sessions typically follow a defined sequence on a mat or Reformer, building strength through resistance and precision. The movement quality is deliberate and form-driven, favouring stability over mobility. An excellent foundation — and a natural complement to the GYROTONIC® method.</p>
+      </div>
+    </div>
+
+    <p class="body-text fade-up" style="margin-top:2.5rem;max-width:680px;">Kim is trained in both disciplines and can guide you through the system that best suits your body's needs — or a carefully integrated combination of both.</p>
+  </div>
+</section>
+
+<!-- PREGNANCY -->
+<section id="pregnancy">
+  <div class="section-inner">
+    <div class="pregnancy-grid">
+      <div class="pregnancy-aside fade-up">
+        <p class="large-num">◎</p>
+        <span class="section-label">Prenatal Wellness</span>
+        <h2 class="section-title" style="font-size:2rem;">Pregnancy &amp;<br>GYROTONIC®</h2>
+        <div class="rule"></div>
+        <p class="body-text">Through teaching pregnant clients, Kim discovered how uniquely welcoming the GYROTONIC EXPANSION SYSTEM® exercises are to a woman's ever-changing pregnant body. The system's core principles translate beautifully into prenatal support.</p>
+        <p class="body-text" style="margin-top:1rem;">
+          <a href="#contact" style="color:var(--rust);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;text-decoration:none;border-bottom:1px solid var(--rust-muted);">Book a Prenatal Consultation →</a>
+        </p>
+      </div>
+
+      <div>
+        <div class="principle-block fade-up">
+          <h4>The Principle of Narrowing</h4>
+          <p>An internal action that lengthens the spine and lifts the pelvic region — creating greater space for the baby while providing support to the uterus. This creates a mobile stability, a jelly-fish-like action that many clients find useful to visualise during labour.</p>
+        </div>
+        <div class="principle-block fade-up delay-1">
+          <h4>Breathing &amp; Labour Preparation</h4>
+          <p>GYROTONIC® breathing patterns are rooted in Yoga Pranayama. The practice of deep, rhythmic breathing during movement encourages relaxation — preparing the mind to release during labour and allowing the body to do its work.</p>
+        </div>
+        <div class="principle-block fade-up delay-2">
+          <h4>Spinal Decompression</h4>
+          <p>The increasing weight of the baby can compress the body's joints, particularly the lower back and legs. GYROTONIC® exercises decompress joints and create space through opposing forces — clients often report lighter legs and a lengthened lower back after sessions.</p>
+        </div>
+        <div class="principle-block fade-up">
+          <h4>The Arch and Curl</h4>
+          <p>A fundamental movement of the system, this rocking motion of the spine encourages mobility in the pelvic region, facilitating the natural movements of the baby and supporting optimal positioning for childbirth.</p>
+        </div>
+        <div class="principle-block fade-up delay-1">
+          <h4>Circulation &amp; Cardiovascular Health</h4>
+          <p>GYROTONIC® exercises executed with deep breathing and fluidity encourage cardiovascular activity — supporting healthy circulation in the legs, preventing varicose veins and leg cramps during pregnancy.</p>
+        </div>
+        <div class="principle-block fade-up delay-2">
+          <h4>Equipment Support</h4>
+          <p>Because the GYROTONIC® apparatus is designed around and to support the human body, its handle unit and pulley-weight traction naturally accommodate the body's extra weight during pregnancy — making sessions comfortable and effective throughout all trimesters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT KIM -->
+<section id="kim">
+  <div class="section-inner">
+    <span class="section-label fade-up">Certified Instructor</span>
+    <h2 class="section-title fade-up delay-1">About Kim</h2>
+    <div class="rule fade-up delay-2"></div>
+
+    <div class="kim-grid">
+      <div>
+        <blockquote class="kim-pullquote fade-up">
+          "After a GYROTONIC® session, I felt much looser and freer than from any other type of exercise I had tried. It stretched my spine and strengthened my body in ways other exercises failed to achieve."
+        </blockquote>
+        <p class="body-text fade-up">Kim Tucker was introduced to the GYROTONIC EXPANSION SYSTEM® whilst working and studying the Pure Classical Pilates Method. After completing her Pure Classical Pilates certification, she decided to further her education with GYROTONIC®.</p>
+        <p class="body-text fade-up">"As I practiced this methodology through the use of the specialised GYROTONIC® equipment, I felt more agile and stronger and old injuries began to improve and strengthen — this motivated me to continue," says Kim. Through this newfound freedom of movement and agility, she pursued deeper study of the system and its principles.</p>
+        <p class="body-text fade-up">GYROTONIC® movements are assisted by exercise equipment specifically designed around the human body to allow total freedom of movement, no restriction to speed or versatility, and enhanced coordination, strength and flexibility.</p>
+        <p class="body-text fade-up">Currently, the GYROTONIC EXPANSION SYSTEM® is utilised around the world with great success for dancers, athletes, rehabilitation facilities and general conditioning for people of all walks of life, age and health.</p>
+        <p class="body-text fade-up"><em>GYROTONIC® exercise systems are trademarked and can only be taught by licensed practitioners. All GYROTONIC® equipment is patented.</em></p>
+      </div>
+
+      <div class="kim-stats fade-up delay-1">
+        <div class="stat-item">
+          <p class="stat-label">Certification</p>
+          <p class="stat-val">Pure Classical Pilates &amp; Licensed GYROTONIC® Instructor</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Studio Location</p>
+          <p class="stat-val">Higgovale / Oranjezicht, Cape Town</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Collaboration</p>
+          <p class="stat-val">Agility Studio &amp; Knightsbridge Apartments, Century City</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Session Types</p>
+          <p class="stat-val">Private, Semi-Private &amp; Online</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Contact</p>
+          <p class="stat-val"><a href="tel:0824572118" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--rust-muted);">082 457 2118</a></p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Introductory Offer</p>
+          <p class="stat-val">30-Minute Complimentary Session</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <span class="section-label fade-up">Sessions &amp; Classes</span>
+    <h2 class="section-title fade-up delay-1">Pricing</h2>
+    <div class="rule fade-up delay-2"></div>
+
+    <div class="pricing-cards">
+      <div class="price-card fade-up">
+        <h3>Private Session</h3>
+        <p class="price-desc">One-on-one with Kim. Fully personalised to your body's needs, goals, and current conditioning.</p>
+        <p class="price-tag">Contact</p>
+        <p class="price-note">For pricing</p>
+        <ul class="price-features">
+          <li>60-minute session</li>
+          <li>GYROTONIC® equipment</li>
+          <li>Tailored programme</li>
+          <li>Injury rehabilitation focus available</li>
+        </ul>
+      </div>
+
+      <div class="price-card featured fade-up delay-1">
+        <h3>Introductory Offer</h3>
+        <p class="price-desc">The best way to experience the system. A complimentary 30-minute session to explore GYROTONIC® with Kim.</p>
+        <p class="price-tag">Free</p>
+        <p class="price-note">30-minute session</p>
+        <ul class="price-features">
+          <li>No commitment required</li>
+          <li>Guided introduction</li>
+          <li>Equipment demonstration</li>
+          <li>Programme recommendation</li>
+        </ul>
+      </div>
+
+      <div class="price-card fade-up delay-2">
+        <h3>Semi-Private</h3>
+        <p class="price-desc">Small group sessions in an intimate studio setting. Shared attention, lower cost — ideal for friends or couples.</p>
+        <p class="price-tag">Contact</p>
+        <p class="price-note">For pricing</p>
+        <ul class="price-features">
+          <li>2–3 participants</li>
+          <li>Shared programme design</li>
+          <li>GYROTONIC® equipment</li>
+          <li>Flexible scheduling</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="pricing-note">GYROTONIC® exercise systems are trademarked and can only be taught by licensed practitioners.<br>GYROTONIC®, GYROTONIC EXPANSION SYSTEM®, and GYROKINESIS® are registered trademarks of Gyrotonic Sales Corp, used with permission.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="section-label fade-up">Get in Touch</span>
+    <h2 class="section-title fade-up delay-1">Book a Session</h2>
+    <div class="rule fade-up delay-2"></div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info fade-up">
+          <div class="contact-detail">
+            <p class="label">Phone</p>
+            <p class="val"><a href="tel:0824572118">082 457 2118</a></p>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Email</p>
+            <p class="val"><a href="mailto:admin@bodyvision.co.za">admin@bodyvision.co.za</a></p>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Studio Location</p>
+            <p class="val">Higgovale / Oranjezicht<br>Cape Town</p>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Also Available At</p>
+            <p class="val">Knightsbridge Apartments<br>Century City, Cape Town</p>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Sessions</p>
+            <p class="val">Private · Semi-Private · Online</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form fade-up delay-1" onsubmit="handleForm(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 082 000 0000"/>
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm Interested In</label>
+          <select id="interest" name="interest">
+            <option value="">Select an option</option>
+            <option>Free 30-Minute Intro Session</option>
+            <option>Private GYROTONIC® Sessions</option>
+            <option>Semi-Private Sessions</option>
+            <option>Online Sessions</option>
+            <option>Pregnancy &amp; GYROTONIC®</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Tell Kim a little about yourself, your goals, or any injuries…"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Enquiry</button>
+        <p id="form-success" style="display:none;font-size:0.85rem;color:var(--rust);margin-top:0.5rem;">Thank you — Kim will be in touch shortly.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo"><span>body</span> vision studio</p>
+  <p class="footer-trademark">GYROTONIC®, GYROTONIC EXPANSION SYSTEM®, GYROKINESIS® and The Art of Exercising and Beyond® are registered trademarks of Gyrotonic Sales Corp and are used with their permission.</p>
+  <ul class="footer-links">
+    <li><a href="#about">The Method</a></li>
+    <li><a href="#pregnancy">Pregnancy</a></li>
+    <li><a href="#kim">About Kim</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2024 Body Vision Studio · Kim Tucker · Higgovale, Cape Town · admin@bodyvision.co.za</p>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Intersection Observer for fade-up
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Form handler
+function handleForm(e) {
+  e.preventDefault();
+  document.getElementById('form-success').style.display = 'block';
+  e.target.reset();
+}
+</script>
+</body>
+</html>
